@@ -7,6 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <h1>Fund Nepal 2021</h1>
        <Eauth className="a" />
         <h2>My App Content</h2>
       </header>
