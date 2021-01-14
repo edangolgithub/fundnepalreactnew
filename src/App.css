@@ -6,6 +6,13 @@
   height: 40vmin;
   pointer-events: none;
 }
+.footer
+{
+  background-color: gray;
+  height: 200px;
+  clear:both;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

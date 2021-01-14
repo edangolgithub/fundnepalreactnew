@@ -3,7 +3,7 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    useParams,
+    // useParams,
 } from "react-router-dom";
 import Home from './Home';
 import AboutUs from './AboutUs';
@@ -16,7 +16,7 @@ import Nav from "react-bootstrap/Nav";
 // import FormControl from "react-bootstrap/FormControl";
 // import NavDropdown from "react-bootstrap/NavDropdown";
 
-const Navfundnepal = () => {
+const Navfundnepal = () => { 
     return (
         <div>
              <div className="row">
@@ -63,4 +63,7 @@ const Navfundnepal = () => {
     )
 }
 
+
 export default Navfundnepal
+
+
