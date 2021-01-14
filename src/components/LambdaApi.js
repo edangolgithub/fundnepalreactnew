@@ -1,17 +1,26 @@
 import React, { Component } from 'react'
 
 export class LambdaApi extends Component {
-
+    
+        state = {
+            items: []
+        }
+    
+   
     componentDidMount()
     {
-        getdata();
+        fetch('https://facj4p3t6k.execute-api.us-east-1.amazonaws.com/Prod')
+        .then(res => res.json())
+        .then(
+          (result) => {
+            this.setState({
+              
+              items: result
+            });
+          })
     }
- getdata() {
-    fetch('https://api.github.com/users/hacktivist123/repos')
-        .then(response => response.json())
-        .then(data => this.setState({users:data}));
-
-}
+        
+          
 render() {
     return (
         <div>
@@ -26,9 +35,10 @@ render() {
                         </tr>
                     </thead>
                     <tbody>                       
-                        {contacts.map((contact) => (
+                        {this.state.items.map(user => (
                             <tr>
-                                <td>users.</td>
+                                <td>{user.Id}</td>
+                                <td>{user.Name}</td>
                             </tr>
                         ))}
                     </tbody>
