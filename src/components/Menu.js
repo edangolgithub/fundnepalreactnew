@@ -11,9 +11,9 @@ import { Menubar } from 'primereact/components/menubar/Menubar';
 import Home from './Home';
 import About from './AboutUs';
 import LambdaApi from './LambdaApi';
-
 import Contact from './ContactUs';
-
+import Register from './Register';
+import Projects from './Projects'
 class MainMenu extends Component {
 
     constructor() {
@@ -26,20 +26,21 @@ class MainMenu extends Component {
                     command: () => { window.location = "#/" }
                 },
                 {
-                    label: 'About',
+                    label: 'Projects',
                     icon: 'pi pi-info',
-                    className: "p-menuitem-active",
-                    command: () => { window.location = "#/about" }
+                    // className: "p-menuitem-active",
+                    command: () => { window.location = "#/Projects" }
                 },
-                {
-                    label: 'Contact',
-                    icon: 'pi pi-power-off',
-                    command: () => { window.location = "#/Contact" }
-                },
+                
                 {
                     label: 'Api',
                     icon: 'pi pi-window-maximize',
                     command: () => { window.location = "#/Api" }
+                },
+                {
+                    label: 'Themes',
+                    icon: 'pi pi-window-maximize',
+                    command: () => { window.location = "#/Register" }
                 }
 
             ]
@@ -55,9 +56,11 @@ class MainMenu extends Component {
                     </div>
                      <Switch>
                             <Route exact path="/" component={Home} />
+                            <Route path="/Projects" component={Projects} />
                             <Route path="/about" component={About} />
                             <Route path="/Contact" component={Contact} />
                             <Route path="/Api" component={LambdaApi} />
+                            <Route path="/Register" component={Register} />
                         </Switch>
                     
                 </div>
