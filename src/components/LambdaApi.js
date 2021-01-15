@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
+import Amplify, { Auth } from 'aws-amplify';
+import awsconfig from '../aws-exports';
+Amplify.configure(awsconfig);
 
-export class LambdaApi extends Component {
+class LambdaApi extends Component {
     
         state = {
             items: []
@@ -24,6 +28,7 @@ export class LambdaApi extends Component {
 render() {
     return (
         <div>
+            <AmplifySignOut />
             <div className="table-responsive">
                 <table className="table table-dark">
                     <thead>
@@ -50,4 +55,4 @@ render() {
 }
 }
 
-export default LambdaApi
+export default withAuthenticator(LambdaApi);

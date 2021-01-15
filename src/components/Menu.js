@@ -23,7 +23,7 @@ class MainMenu extends Component {
                 {
                     label: 'Home',
                     icon: 'pi pi-home',
-                    command: () => { window.location = "#/" }
+                    command: () => { window.location = "/" }
                 },
                 {
                     label: 'Projects',
