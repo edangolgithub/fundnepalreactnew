@@ -17,6 +17,9 @@
           "appId": "dkeql4wb5kwvo",
           "type": "cicd"
         }
+      },
+      "auth": {
+        "fundnepalreactnewe2561ea6": {}
       }
     }
   }
