@@ -1,5 +1,3 @@
-//import { withAuthenticator } from '@aws-amplify/ui-react';
-
 import './App.css';
 
 import Menu from './components/Menu'
