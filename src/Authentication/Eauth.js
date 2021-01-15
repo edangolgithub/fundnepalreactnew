@@ -16,3 +16,4 @@ class  Eauth extends React.Component {
 }
 
 // export default withAuthenticator(Eauth);
+export default Eauth
