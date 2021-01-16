@@ -3,9 +3,9 @@ import { Button } from 'react-bootstrap';
 import Loader from './Loader'
 import Apitable from './Apitable'
 // import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
-import Amplify  from 'aws-amplify';
-import awsconfig from '../aws-exports';
-Amplify.configure(awsconfig);
+// import Amplify  from 'aws-amplify';
+// import awsconfig from '../aws-exports';
+// Amplify.configure(awsconfig);
 
 class LambdaApi extends Component {
     constructor() {
@@ -30,14 +30,33 @@ class LambdaApi extends Component {
                 })
 
     }
-
-
     render() {
+        const tablestyle={
+            fontSize:"12px",
+            maxWidth:"400px",
+            textAlign:"left",
+            border:'1px outset brown'
+        }
         return (
             <div>
-                {this.state.loading ? <Loader /> : <Apitable results={this.state.items} />}
-                <Button onClick={this.callapi} variant="success">Get Api Data</Button>{' '}
-
+                <div className="container">              
+                    <table style={tablestyle} className="table table-dark table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Token</th>
+                                <th scope="col">Access</th>
+                            </tr>
+                        </thead>
+                       
+                            {this.state.loading ? null : <Apitable results={this.state.items} />}
+                       
+                    </table>
+                    <Button onClick={this.callapi} style={{textAlign:"left",display:"block",width:"215px",height:"65px"}} variant="success">
+                    {this.state.loading ? <Loader style={{textAlign:"center"}} />:"Call Api" }
+                        </Button>{' '}
+                </div>
             </div>
         )
     }

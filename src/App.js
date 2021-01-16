@@ -13,6 +13,7 @@ const App=()=>{
           <header className="App-header">
            <Menu />
           </header>
+          
           <Footer />
         </div>
       );
