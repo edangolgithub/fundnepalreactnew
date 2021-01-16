@@ -15,6 +15,8 @@ import Contact from './ContactUs';
 import Register from './Register';
 import Projects from './Projects';
 import Learn from '../learn/Learn';
+import Jq from '../learn/Jq';
+import GlobalGivings from '../learn/GlobalGivings';
 class MainMenu extends Component {
 
     constructor() {
@@ -63,6 +65,8 @@ class MainMenu extends Component {
                             <Route path="/Api" component={LambdaApi} />
                             <Route path="/Register" component={Register} />
                             <Route path="/l" component={Learn} />
+                            <Route path="/jq" component={Jq} />
+                            <Route path="/g" component={GlobalGivings} />
                         </Switch>
                     
                 </div>
