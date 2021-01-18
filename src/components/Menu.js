@@ -17,6 +17,7 @@ import Projects from './Projects';
 import Learn from '../learn/Learn';
 import Jq from '../learn/Jq';
 import GlobalGivings from '../learn/GlobalGivings';
+import NgoApi from './NgoApi';
 class MainMenu extends Component {
 
     constructor() {
@@ -44,6 +45,11 @@ class MainMenu extends Component {
                     label: 'Themes',
                     icon: 'pi pi-window-maximize',
                     command: () => { window.location = "#/Register" }
+                },
+                {
+                    label: 'Non-Profit',
+                    icon: 'pi pi-window-maximize',
+                    command: () => { window.location = "#/a" }
                 }
 
             ]
@@ -67,6 +73,7 @@ class MainMenu extends Component {
                             <Route path="/l" component={Learn} />
                             <Route path="/jq" component={Jq} />
                             <Route path="/g" component={GlobalGivings} />
+                            <Route path="/a" component={NgoApi} />
                         </Switch>
                     
                 </div>

@@ -1,0 +1,57 @@
+.smim
+{
+    height: 100px;
+    margin: 5px;
+    border: 3px outset rgb(195, 221, 47);   
+    border-radius: 3px;
+   
+}
+.btnmar
+{
+ margin:10px;
+ width: fit-content;
+ padding: 8px;
+ border-radius: 5px;
+}
+.pnp{
+margin:1px;
+
+}
+.evan-card
+{
+     box-shadow: 2px 2px 4px gray;
+     padding: 5px;
+     margin: 5px;
+     font-size: .5em;  
+     
+}
+img.gg
+{ 
+    object-fit: contain; 
+   
+} 
+.fntsm
+{
+   
+    
+}
+.ecardtitle
+{
+    margin: 0;
+}
+.x {
+    display: flex;
+}
+.imcard
+{
+   flex-direction: row;
+}
+.contactfooter
+{
+    font-size: .8em;  
+    font-style: italic;
+}
+.btndiv
+{
+    margin: 5px;;
+}
