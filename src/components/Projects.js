@@ -1,5 +1,5 @@
 import React from 'react'
-import './minimal.css'
+//import './minimal.css'
 import './search.css'
 import im from "./header-bg.jpg";
 const Projects = () => {

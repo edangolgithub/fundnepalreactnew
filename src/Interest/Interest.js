@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import "../components/style.css"
+
 import { Account } from './Data'
 import SAccount from './SelectedAccount'
 export class Interest extends Component {
@@ -20,7 +20,7 @@ export class Interest extends Component {
             return;
         }
         this.setState({ selectedAccount: this.state.Organizations.find(a => a.accountid === id) });
-        console.log(this.state.selectedAccount);
+        //console.log(this.state.selectedAccount);
     };
 
     render() {
@@ -43,14 +43,17 @@ export class Interest extends Component {
 
                     </div>
                     <div className="row">
-                        <div className="col-xs-1-12">
+                        <div className="col">
                             {
                                 (() => {
-                                    if (this.state.selectedAccount === 'undefined') {
-                                        return <h1>nothng</h1>;
+                                    if (this.state.selectedAccount === 'undefined' ||this.state.selectedAccount==null
+                                   || this.state.selectedAccount.length<1)
+                                    {
+                                        return <h1 className="g">nothng</h1>;
 
                                     }
                                     else {
+                                      
                                         return <SAccount data={this.state.selectedAccount} />;
                                     }
 

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import 'primereact/resources/themes/rhea/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
@@ -7,6 +6,7 @@ import 'primeicons/primeicons.css';
 // import { Menu } from 'primereact/menu';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { Menubar } from 'primereact/components/menubar/Menubar';
+import "../components/style.css"
 
 import Home from './Home';
 import About from './AboutUs';

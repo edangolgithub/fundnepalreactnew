@@ -11,12 +11,12 @@ export class SelectedAccount extends Component {
                     <div className="row">
                         <div className="col">
                             <h6>Account details</h6>
-                            <div className="card">
-                                <div className="card-body">
-                                    <p className="card-text">{this.props.data.accountid}</p>
-                                    <p className="card-text">{this.props.data.name}</p>
-                                    <p className="card-text">{this.props.data.address}</p>
-                                    <p className="card-text">{this.props.data.phone}</p>
+                            <div className="cahrd">
+                                <div className="card-bcody">
+                                    <p >{this.props.data.accountid}</p>
+                                    <p >{this.props.data.name}</p>
+                                    <p >{this.props.data.address}</p>
+                                    <p >{this.props.data.phone}</p>
                                 </div>
                             </div>
                         </div>
@@ -25,12 +25,11 @@ export class SelectedAccount extends Component {
                                 <div className="card-body">
                                     <select className="custom-select my-1 mr-sm-2">
                                         <option >Choose...</option>
-                                        {/* {
+                                        {
                                             this.props.data === 'undefined' ? null :
-
                                                 this.props.data.accounttype.map(t =>
                                                     <option key={t} value={t}>{t}</option>
-                                                )} */}
+                                                )}
                                     </select>
                                 </div>
                             </div>
