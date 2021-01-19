@@ -33,7 +33,7 @@ export class NgoApi extends Component {
         return (
             <div className="btndiv">
                  <Button onClick={this.callngoservice} style={{ textAlign: "left", display: "inline-block",fontSize:"12px",  width: "215px", height: "65px" }} variant="success">
-                    {this.state.loading ? <Loader style={{ textAlign: "center" }} /> : "Api"}
+                    {this.state.loading ? <Loader style={{ textAlign: "center" }} /> : "Organizations"}
                 </Button>{' '}
         
                 {this.state.loading? null:<NgoTable ngodata={this.state.Organizations} />}

@@ -1,57 +1,104 @@
-.smim
-{
-    height: 100px;
-    margin: 5px;
-    border: 3px outset rgb(195, 221, 47);   
-    border-radius: 3px;
-   
+@font-face {
+    font-family: 'efont';
+    src: url(./Fondamento-Regular.ttf);
 }
-.btnmar
-{
- margin:10px;
- width: fit-content;
- padding: 8px;
- border-radius: 5px;
-}
-.pnp{
-margin:1px;
 
+.smim {
+    height: 60px;
+    margin: 5px;
+    border: 3px outset rgb(195, 221, 47);
+    border-radius: 3px;
 }
-.evan-card
-{
-     box-shadow: 2px 2px 4px gray;
-     padding: 5px;
-     margin: 5px;
-     font-size: .5em;  
-     
+
+.btnmar {
+    width: fit-content;
+    padding: 5px;
+    border-radius: 5px;
 }
-img.gg
-{ 
-    object-fit: contain; 
-   
-} 
-.fntsm
-{
-   
-    
+
+.pnp {
+    margin: 1px;
 }
-.ecardtitle
-{
+
+.evan-card {
+    box-shadow: 2px 2px 4px gray;
+    padding: 5px;
+    margin: 7px;
+    font-size: .5em;
+    max-height: 800px;
+    overflow-x: hidden;
+}
+
+img.gg {
+    object-fit: cover;
+    height: 350px;
+    width: 90%;
+    border-radius: 6px;
+    margin-bottom: 2px;
+}
+
+.fntsm {
+    text-align: left;
+    font-family: 'efont';
+    max-height: 200px;
+    overflow: auto;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #9bb7c7;
+}
+
+.fntsm a {
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.ecardtitle {
     margin: 0;
+    font-weight: bolder;
+    color: chocolate;
 }
+
 .x {
     display: flex;
 }
-.imcard
-{
-   flex-direction: row;
+
+.imcard {
+    flex-direction: row;
+    max-height: 70px;
 }
-.contactfooter
-{
-    font-size: .8em;  
+
+.card-footer {
+    padding: 0;
+}
+
+.card-body {
+    padding: 5px;
+}
+
+.contactfooter {
+    font-size: .8em;
     font-style: italic;
 }
-.btndiv
-{
-    margin: 5px;;
+
+.btndiv {
+    margin: 5px;
+    ;
+}
+
+@media only screen and (max-width: 768px) {
+    .x {
+        display: block;
+    }
+    .evan-card {
+        box-shadow: 2px 2px 4px gray;
+        padding: 5px;
+        margin: 7px;
+        font-size: .5em;
+        max-height: 800px;
+        overflow-x: hidden;
+    }
+    .cole {
+        display: block;
+    }
 }

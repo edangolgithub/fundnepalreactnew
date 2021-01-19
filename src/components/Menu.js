@@ -18,39 +18,41 @@ import Learn from '../learn/Learn';
 import Jq from '../learn/Jq';
 import GlobalGivings from '../learn/GlobalGivings';
 import NgoApi from './NgoApi';
+import NgoForm from './NgoForm'
+import Interest from '../Interest/Interest'
 class MainMenu extends Component {
 
     constructor() {
         super();
         this.state = {
             items: [
-                {
-                    label: 'Home',
-                    icon: 'pi pi-home',
-                    command: () => { window.location = "/" }
-                },
-                {
-                    label: 'Projects',
-                    icon: 'pi pi-info',
-                    // className: "p-menuitem-active",
-                    command: () => { window.location = "#/Projects" }
-                },
+                // {
+                //     label: 'Home',
+                //     icon: 'pi pi-home',
+                //     command: () => { window.location = "/" }
+                // },
+                // {
+                //     label: 'Projects',
+                //     icon: 'pi pi-info',
+                //     // className: "p-menuitem-active",
+                //     command: () => { window.location = "#/Projects" }
+                // },
                 
-                {
-                    label: 'Api',
-                    icon: 'pi pi-window-maximize',
-                    command: () => { window.location = "#/Api" }
-                },
-                {
-                    label: 'Themes',
-                    icon: 'pi pi-window-maximize',
-                    command: () => { window.location = "#/Register" }
-                },
-                {
-                    label: 'Non-Profit',
-                    icon: 'pi pi-window-maximize',
-                    command: () => { window.location = "#/a" }
-                }
+                // {
+                //     label: 'Api',
+                //     icon: 'pi pi-window-maximize',
+                //     command: () => { window.location = "#/Api" }
+                // },
+                // {
+                //     label: 'Themes',
+                //     icon: 'pi pi-window-maximize',
+                //     command: () => { window.location = "#/Register" }
+                // },
+                // {
+                //     label: 'Non-Profit',
+                //     icon: 'pi pi-window-maximize',
+                //     command: () => { window.location = "#/a" }
+                // }
 
             ]
         };
@@ -74,6 +76,8 @@ class MainMenu extends Component {
                             <Route path="/jq" component={Jq} />
                             <Route path="/g" component={GlobalGivings} />
                             <Route path="/a" component={NgoApi} />
+                            <Route path="/b" component={NgoForm} />
+                            <Route path="/c" component={Interest} />
                         </Switch>
                     
                 </div>

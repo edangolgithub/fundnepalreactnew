@@ -16,12 +16,12 @@ export class Ngotable extends Component {
             <div className="x">
                 {this.props.ngodata.map(ngo => (
                     <div className="card evan-card" key={ngo.OrganizationId} >
-                        <img className="card-img-top gg" src={ngo.images[0]}  alt="gg" />
+                        <img className="card-img-top gg mx-auto d-block" src={ngo.images[0]} alt="gg" />
                         <div className="card text-center">
                             <div className="card-header"><h5 className="card-title ecardtitle">{ngo.name}</h5></div>
                             <div className="card-body">
                                 <div className="container">
-                                    <div className="row">
+                                    <div className="row cole">
                                         <div className="col">
                                             <p className="card-text fntsm">
                                                 {ngo.mission}
@@ -29,13 +29,13 @@ export class Ngotable extends Component {
                                             <a href={ngo.url} rel="noreferrer" target="_blank" className="btn btn-link btnmar ">Website</a>
                                         </div>
                                         <div className="col">
-                                            
-                                                    {
-                                                        ngo.projects.map(project =>
-                                                            <div className="card mb-1 p-1 fntsm"  >
-                                                                <a href={project}  rel="noreferrer" target="_blank">{this.parseurl(project)}</a>
-                                                            </div>
-                                                        )}                                               
+
+                                            {
+                                                ngo.projects.map(project =>
+                                                    <div className="card mb-1 p-1 fntsm"  >
+                                                        <a href={project} rel="noreferrer" target="_blank">{this.parseurl(project)}</a>
+                                                    </div>
+                                                )}
                                         </div>
                                     </div>
                                 </div>
@@ -43,23 +43,23 @@ export class Ngotable extends Component {
                             <div className="card-footer">
                                 <div className="row">
                                     <div className="col">
-                                    <a href={ngo.url} rel="noreferrer" target="_blank">
-                                        <div className="card imcard">
-                                            {ngo.images.map(image =>
-                                                <img className="smim"  src={image} alt="profile" />
-                                            )}
-                                        </div>
+                                        <a href={ngo.url} rel="noreferrer" target="_blank">
+                                            <div className="card imcard">
+                                                {ngo.images.map(image =>
+                                                    <img className="smim" src={image} alt="profile" />
+                                                )}
+                                            </div>
                                         </a>
                                     </div>
                                 </div>
                                 <div className="contactfooter">
-                                <p className="pnp">{ngo.phones[0]}</p>
+                                    {/* <p className="pnp">{ngo.phones[0]}</p>
                                 <p className="pnp">{ngo.emails[0]}</p>
                                 <p className="pnp">{ngo.addressLine1}</p>
-                                <p className="pnp">{ngo.city}</p>
+                                <p className="pnp">{ngo.city}</p> 
                                 <p className="pnp">{ngo.country}</p>
                                 <p className="pnp">{ngo.postal}</p>
-                                <p className="pnp">{ngo.establisheddate}</p>
+                                <p className="pnp">{ngo.establisheddate}</p> */}
                                 </div>
                             </div>
                         </div>

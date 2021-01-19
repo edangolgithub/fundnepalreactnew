@@ -17,7 +17,7 @@ export class Footer extends Component {
                   <a className="btn btn-dark btn-social mx-2" href="#!"><i className="fab fa-linkedin-in" /></a>
                 </div>
                 <div className="col-lg-4 text-lg-right">
-                  <a className="mr-3" href="#!">Privacy Policy</a>
+                  <a className="mr-3" href="#!">Privacy  dgdfg Policy</a>
                   <a href="#!">Terms of Use</a>
                 </div>
               </div>
