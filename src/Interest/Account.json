@@ -1,0 +1,74 @@
+{ "accounts": [
+    {
+      "name": "Bso Amatya",
+      "address": "kilagal",
+      "phone": "123456",
+      "accountid": "123456789",
+      "accounttype":[
+          "daily","fixed"
+      ]
+    },
+    {
+        "name": "Evan Dangol",
+        "address": "khusibu",
+        "phone": "4573454",
+        "accountid": "234567891",
+        "accounttype":[
+            "daily","swoniga"
+        ]
+      },
+      {
+        "name": "Ram Prasad",
+        "address": "thamel",
+        "phone": "7867546",
+        "accountid": "345678912",
+        "accounttype":[
+            "daily","fixed"
+        ]
+      }
+
+  ],
+  "transaction":[
+    {
+      "accountid":"123456789",
+      "date":"01-11-2021",
+      "accounttype":"daily",
+      "amount":"100",
+      "ledger":"cash",
+      "entry":"debit"
+    },
+    {
+      "accountid":"123456789",
+      "date":"01-12-2021",
+      "accounttype":"daily",
+      "amount":"100",
+      "ledger":"cash",
+      "entry":"debit"
+    },
+    {
+      "accountid":"234567891",
+      "date":"01-13-2021",
+      "accounttype":"daily",
+      "amount":"100",
+      "ledger":"cash",
+      "entry":"debit"
+    },
+    {
+      "accountid":"123456789",
+      "date":"01-14-2021",
+      "accounttype":"daily",
+      "amount":"100",
+      "ledger":"cash",
+      "entry":"debit"
+    },
+    {
+      "accountid":"234567891",
+      "date":"01-15-2021",
+      "accounttype":"daily",
+      "amount":"100",
+      "ledger":"cash",
+      "entry":"debit"
+    }
+  ]
+}
+  

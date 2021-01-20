@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import { Account } from './Data'
 import SAccount from './SelectedAccount'
 export class Interest extends Component {
@@ -28,7 +27,7 @@ export class Interest extends Component {
             <div>
                 <div className="container">
                     <div className="row">
-                        <div className="col-xs-1-12">
+                        <div className="col">
                             <div className="form-group">
                                 <label htmlFor="">Account</label>
                                 <select defaultValue="-1" className="form-control" onChange={this.handleChange} name="" id="">
