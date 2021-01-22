@@ -1,39 +1,43 @@
 import React, { Component } from 'react'
-
 export class Transactions extends Component {
-    render() {
-        return (
-            <div>
-                <div className="table-responsive">
-                <table className="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">First</th>
-                      <th scope="col">Last</th>
-                      <th scope="col">Handle</th>
+  render() {
+    var data = this.props.data;
+    return (
+      <div>
+        { data &&
+          <div className="table-responsive">
+            <table className="table table-sm">
+              <thead>
+                <tr>
+                  <th scope="col">Date</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  data.map((t, k) =>
+                    <tr key={k}>
+                      <td>{t.date}</td>
+                      <td>{t.type}</td>
+                      <td>{t.amount}</td>
                     </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>@mdo</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Jacob</td>
-                      <td>Thornton</td>
-                      <td>@fat</td>
-                    </tr>
-                  </tbody>
-                </table>
-                </div>
-                
-            </div>
-        )
-    }
+                  )
+                }
+                <tr>
+                  <td></td>
+                  <td style={{textAlign:"right",fontWeight:"bolder",color:"red"}}>Total </td>
+                  <th style={{color:"red"}}>{this.props.total}</th>    
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+
+        }
+      </div>
+    )
+  }
 }
 
 export default Transactions

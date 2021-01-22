@@ -1,52 +1,32 @@
 import React, { Component } from 'react'
 
 export class SelectedAccount extends Component {
-    constructor()
-    {
-        super();
-        this.handleaccounttype=this.handleaccounttype.bind(this);
-    }
-    handleaccounttype(event)
-    {
-       this.props.onselectaccounttype(event.target.value);
-    }
+    // constructor() {
+    //     super();
+
+    // }
+
     render() {
         if (typeof (this.props.data) === "undefined" || this.props.data === null) {
             return (<div>h</div>);
         }
-       const data=this.props.data;
+        const data = this.props.data;
         return (
-                 <div className="row">
-                        <div className="col">
-                            <h6>Account details</h6>
-                            <div className="cahrd">
-                                <div className="card-body adetails">
-                                    <div>Name : {data.name}</div>
-                                    <div>Phone : {data.phone}</div>
-                                    <div>address : {data.address}</div>
-                                    <div>email : {data.phone}</div>
-                                </div>
-                            </div>
-                            { this.props.data.accounttype &&
-                            <div className="card">
-                                <div className="card-body">
-                                    
-                                    <select className="custom-select my-1 mr-sm-2" onChange={this.handleaccounttype} >
-                                        <option >accounttype...</option>
-                                        {
-                                           
-                                                this.props.data.accounttype.map(t =>
-                                                    <option key={t} value={t}>{t}</option>
-                                                )
-                                        }
-                                    </select>
-                                   
-                                </div>
-                            </div>
-                             }
-                        </div>
-                      
-                    </div>              
+
+            <div className="card" style={{fontSize:".9em",minHeight:"450px",marginBottom:"10px",fontFamily:"efont"}}>
+              { data &&
+                    <div className="card-body">
+                          <h5 className="card-title">Account details</h5>
+                        <div><span className="titl"> Name :</span> <span className="dat">{data.name}</span> </div>
+                        <div><span className="titl"> Phone :</span><span className="dat"> {data.phone}</span></div>
+                        <div><span className="titl"> Address :</span><span className="dat">{data.address}</span></div>
+                        <div><span className="titl"> Email :</span><span className="dat">{data.phone}</span></div>
+                    </div>
+
+
+                }
+            </div>
+
         )
     }
 }

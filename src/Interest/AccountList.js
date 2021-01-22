@@ -1,32 +1,54 @@
 import React, { Component } from 'react'
 
 export class AccountList extends Component {
-    constructor()
-    {
+    constructor() {
         super();
-        this.handlechange=this.handlechange.bind(this);
+        this.handleaccountchange = this.handleaccountchange.bind(this);
+        this.handletypechange = this.handletypechange.bind(this);
+  
     }
-    handlechange(event)
+    handleaccountchange(event) {
+        if(event.target.value==="-9")
+        {
+            alert(event.target.value);
+            return;
+        }
+        this.props.onhandleaccountchange(event.target.value);
+    }
+    handletypechange(event)
     {
-        this.props.onselectchange(event.target.value);       
+        if(event.target.value==="-9")
+        {
+            alert(event.target.value);
+            return;
+        }
+        this.props.onhandletypechange(event.target.value);
     }
+    
     render() {
         return (
-            <div>
-                <div class="container m-1 mx-auto">
-                <div className="form-group">
-                    <label htmlFor="">Accounts</label>
-                    <select className="form-control" onChange={this.handlechange} >
-                        {
-                            this.props.data.map((ac, k) =>
-                                <option value={ac} key={k}>{ac}</option>
-                            )
-                        }
-                    </select>
-                </div>
-                </div>
-                
-            </div>
+                    <div className="form-inline combodiv">                       
+                        <select className="form-control m-2" onChange={this.handleaccountchange}>
+                            <option value="-9">Account</option>
+                            {
+
+                                this.props.data.map((ac, k) =>
+                                    <option value={ac} key={k}>{ac}</option>
+                                )
+                            }
+                        </select>
+                        <select className="form-control m-2" onChange={this.handletypechange} >
+                            <option value="-9">Account Type</option>
+                            {
+
+                                this.props.acounts.map((ac, k) =>
+                                    <option value={ac.accounttypeid} key={k}>{ac.accounttype}</option>
+                                )
+                            }
+                        </select>
+                      
+                    </div>
+              
         )
     }
 }

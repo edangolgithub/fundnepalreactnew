@@ -3,12 +3,18 @@ import axios from 'axios'
 import AccountList from "./AccountList"
 import SelectedAccount from "./SelectedAccount";
 import Transaction from "./Transactions";
+import * as fun from './Calculation'
+import Iform from "./IForm";
 export class Interestmain extends Component {
     state = {
         accounts: [],
         accountids: [],
         selectedaccount: [],
-        transaction: []
+        selectedaccounttype: [],
+        transaction: [],
+        accounttypes: [],
+        selectedtransaction: [],
+        total: 0
     };
     getaccounts() {
         axios.get('http://localhost:3333/accounts')
@@ -21,45 +27,113 @@ export class Interestmain extends Component {
                 //console.log(this.state.accountids)
             })
     }
+    getaccounttypes() {
+        axios.get('http://localhost:3333/accounttypes')
+            .then(data => {
+                const d = data.data;
+                this.setState({ accounttypes: d })
+            })
+    }
+    gettransactions() {
+        axios.get('http://localhost:3333/transaction')
+            .then(data => {
+                const d = data.data;
+                this.setState({ transaction: d }, function () {
+                    this.setState({
+                        selectedtransaction: this.state.transaction
+                            .filter(x => x.accounttypeid === this.state
+                                .selectedaccounttype.accounttypeid &&
+                                x.accountid === this.state.selectedaccount
+                                    .accountid)
+                    }, function () {
+                        let res = fun.CalculateTotal(this.state.selectedtransaction)
+                        this.setState({ total: res })
+                        console.log(res)
+                    })
+                })
+            })
+
+    }
     postaccounts(data) {
         axios.post('http://localhost:3333/accounts', data)
     }
+    posttransaction(amount) {
+        if (this.state.selectedaccount.length < 1) {
+            console.log(this.state.selectedaccount)
+            alert("no account selected")
+            return
+        }
+        var d = new Date().toDateString();
+        axios.post('http://localhost:3333/transaction', {
+            accountid: this.state.selectedaccount.accountid,
+            date: d,
+            accounttypeid: this.state.selectedaccounttype.accounttypeid,
+            amount: amount,
+            type: "cash",
+            entry: "debit"
+        })
+            .then(() => alert("success"))
+    }
     componentDidMount() {
         this.getaccounts();
+        this.getaccounttypes(); 
     }
-    onselectchange(acid) {
-        // console.log(this.state.accounts);        
+    onhandleaccountchange(acid) {
         var selectedaccount = this.state.accounts.find(a => a.accountid === acid);
         this.setState({ selectedaccount: selectedaccount })
+        //console.log(this.state.selectedaccount)
     }
 
-    onselectaccounttype(actype) {
-        alert(actype);
+    onhandletypechange(actype) {
+        var selectedaccounttype = this.state.accounttypes.find(a => a.accounttypeid === actype);
+        this.setState({ selectedaccounttype: selectedaccounttype })
     }
-    constructor() {
-        super();
-        this.onselectchange = this.onselectchange.bind(this)
-        this.onselectaccounttype = this.onselectaccounttype.bind(this)
+    onselectaccount() {
+        console.log("h")
+        this.gettransactions();
+    }
+    constructor(props) {
+        super(props);
+        this.onhandleaccountchange = this.onhandleaccountchange.bind(this)
+        this.onhandletypechange = this.onhandletypechange.bind(this)
+        this.onselectaccount = this.onselectaccount.bind(this)
+        // this.gettransactions=this.gettransactions.bind(this)
+        // this.getaccounts=this.getaccounts.bind(this)
+        // this.getaccounttypes=this.getaccounttypes.bind(this)
+        this.formclick = this.formclick.bind(this)
+    }
+    formclick(amount) {
+        var amt = Number(amount);
+        this.posttransaction(amt);
     }
     render() {
         return (
             <div>
-                <AccountList onselectchange={this.onselectchange} data={this.state.accountids} />
+                <div className="container-fluid">
+                    <div className="row">
+                        <div className="col-6">
+                        <button type="button" onClick={this.onselectaccount} className=" mt-2 float-right btn btn-primary">View</button>
 
-                {this.state.selectedaccount ?
-                    <div class="container">
+                            <AccountList onhandletypechange={this.onhandletypechange} onhandleaccountchange={this.onhandleaccountchange} data={this.state.accountids} acounts={this.state.accounttypes} />
+                        </div>
+
+                    </div>
+                    <hr />
+                    {
+                        this.state.selectedaccount &&
                         <div className="row">
-                            <div className="col-3">
-                                <SelectedAccount onselectaccounttype={this.onselectaccounttype} data={this.state.selectedaccount} />
+                            <div className="col-2">
+                                <SelectedAccount data={this.state.selectedaccount} />
                             </div>
-                            <div className="col-9" style={{ float: "right", width: "200px" }} >
-                                <Transaction />
+                            <div className="col-10" >
+                                <Transaction total={this.state.total} data={this.state.selectedtransaction} />
+                                <Iform formclick={this.formclick} />
                             </div>
                         </div>
-                    </div>
-                    :
-                    <h1>nothing</h1>
-                }
+                    }
+
+
+                </div>
             </div>
         )
     }

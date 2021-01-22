@@ -2,7 +2,10 @@
     font-family: 'efont';
     src: url(Fondamento-Regular.ttf);
 }
-
+body
+{
+    font-family: 'Courier New', Courier, monospace;
+}
 .smim {
     height: 60px;
     margin: 5px;
@@ -72,13 +75,6 @@ img.gg {
     max-height: 70px;
 }
 
-.card-footer {
-    padding: 0;
-}
-
-.card-body {
-    padding: 5px;
-}
 
 .contactfooter {
     font-size: .8em;
@@ -89,7 +85,21 @@ img.gg {
     margin: 5px;
     ;
 }
-
+.titl
+{
+    border-bottom:rgb(255, 166, 0) solid 1px;
+    font-weight: bolder;
+}
+.dat{
+    border-bottom: rgb(250, 204, 52) dashed 1px;
+    margin-left:10px;
+    color: rgb(107, 129, 6);
+}
+.combodiv select{
+    min-width: 250px;
+    padding: 3px;
+    font-weight: bolder;
+}
 @media only screen and (max-width: 768px) {
     .x {
         display: block;
