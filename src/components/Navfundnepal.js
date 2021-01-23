@@ -8,7 +8,7 @@ import {
 import Home from './Home';
 import AboutUs from './AboutUs';
 import ContactUs from './ContactUs';
-import "bootstrap/dist/css/bootstrap.min.css";
+
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 // import Form from "react-bootstrap/Form";
