@@ -15,7 +15,7 @@ import { Menubar } from 'primereact/components/menubar/Menubar';
 // import Learn from '../learn/Learn';
 // import Jq from '../learn/Jq';
 // import GlobalGivings from '../learn/GlobalGivings';
-// import NgoApi from './NgoApi';
+ import NgoApi from './NgoApi';
 // import NgoForm from './NgoForm'
 // import Interest from '../Interest/Interest'
 // import Jsondb from '../Interest/Jsondb'
@@ -85,7 +85,9 @@ class MainMenu extends Component {
                         <Route path="/e" component={Example} />
                         <Route path="/f" component={Ia} /> */}
                         <Route path="/z" component={I} />
-                        <Route path="/" component={Im} />
+                        <Route path="/i" component={Im} />
+ <Route path="/" component={NgoApi} />
+
 
                     </Switch>
 
