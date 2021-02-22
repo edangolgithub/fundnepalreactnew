@@ -23,6 +23,7 @@ import { Menubar } from 'primereact/components/menubar/Menubar';
 // import Ia from '../Interest/InterestApi'
 import Im from '../Interest/Interestmain'
 import I from '../Interest/Interest'
+import R from "./RTable";
 class MainMenu extends Component {
 
     constructor() {
@@ -86,6 +87,7 @@ class MainMenu extends Component {
                         <Route path="/f" component={Ia} /> */}
                         <Route path="/z" component={I} />
                         <Route path="/i" component={Im} />
+                        <Route path="/" component={R} />
  <Route path="/" component={NgoApi} />
 
 
